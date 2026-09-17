@@ -1,5 +1,5 @@
-QUERY PLAN,"TEST RESULTS AFTER INDEXING create index users_organization_id
-on users(organization_id);"
+"QUERY PLAN  :::  TEST RESULTS AFTER INDEXING create index users_organization_id
+on users(organization_id);",
 Nested Loop  (cost=5.08..977.22 rows=193 width=28) (actual time=0.088..1.301 rows=237.00 loops=1),
   Buffers: shared hit=346,
   ->  Nested Loop  (cost=4.79..91.08 rows=29 width=24) (actual time=0.074..0.204 rows=35.00 loops=1),

@@ -1,5 +1,5 @@
-QUERY PLAN,,"TESR RESULT AFTER INDEXING create index activity_user_id
-on activity_logs(user_id);"
+"QUERY PLAN  ::: TEST RESULT AFTER INDEXING  create index activity_user_id
+on activity_logs(user_id);",,
 Nested Loop  (cost=0.57..1461.72 rows=193 width=28) (actual time=0.184..6.326 rows=237.00 loops=1),,
   Buffers: shared hit=501,,
   ->  Nested Loop  (cost=0.28..575.58 rows=29 width=24) (actual time=0.166..5.356 rows=35.00 loops=1),,
