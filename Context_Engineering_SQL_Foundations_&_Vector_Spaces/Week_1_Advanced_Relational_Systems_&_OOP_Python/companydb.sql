@@ -98,3 +98,57 @@ from generate_series(100000,299999) as gs;
 
 select * from activity_logs; 
 
+
+
+
+
+EXPLAIN ANALYZE
+SELECT
+    u.username,
+    o.organization_name,
+    a.activity
+FROM users u
+JOIN organization o
+    ON u.organization_id = o.organization_id
+JOIN activity_logs a
+    ON u.user_id = a.user_id
+WHERE o.organization_id = 10;
+
+
+create index activity_user_id
+on activity_logs(user_id);
+
+drop index activity_user_id;
+
+
+EXPLAIN ANALYZE
+SELECT
+    u.username,
+    o.organization_name,
+    a.activity
+FROM users u
+JOIN organization o
+    ON u.organization_id = o.organization_id
+JOIN activity_logs a
+    ON u.user_id = a.user_id
+WHERE o.organization_id = 10;
+
+
+
+create index users_organization_id
+on users(organization_id);
+
+drop index users_organization_id;
+
+
+EXPLAIN ANALYZE
+SELECT
+    u.username,
+    o.organization_name,
+    a.activity
+FROM users u
+JOIN organization o
+    ON u.organization_id = o.organization_id
+JOIN activity_logs a
+    ON u.user_id = a.user_id
+WHERE o.organization_id = 10;
