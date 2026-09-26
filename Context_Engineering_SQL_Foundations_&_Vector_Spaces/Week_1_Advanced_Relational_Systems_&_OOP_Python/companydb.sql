@@ -152,3 +152,4 @@ JOIN organization o
 JOIN activity_logs a
     ON u.user_id = a.user_id
 WHERE o.organization_id = 10;
+
